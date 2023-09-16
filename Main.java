@@ -1,17 +1,25 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
-
-        int count = 5;
-        final double count1 = 5.0;
+        final int count = 5;
+        double count1 = 5;
+        count1 = count1 + 5;
         boolean question = false;
+        double finalnum = ((count+5)*count1);
+        double compoundexpression = ((2+5)%2);
+        System.out.println("Hello and welcome! ");
         System.out.println(count);
         System.out.println(count1);
         System.out.println(question);
+        System.out.println(finalnum);
+        System.out.println(compoundexpression);
+        try{
+            int divide = (5/0);
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.println("Cannot divide by zero!");
+        }
 
 
 
