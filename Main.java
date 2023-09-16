@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         final int count = 5;
@@ -20,6 +20,32 @@ public class Main {
         {
             System.out.println("Cannot divide by zero!");
         }
+        int x = 2;
+        x++;
+        int y = 6;
+        y--;
+        System.out.print("Please write a number: ");
+        Scanner scan = new Scanner(System.in);
+        int numberone = scan.nextInt();
+        System.out.println(numberone*=x);
+        System.out.print("Please write a second number: ");
+        int numbertwo = scan.nextInt();
+        System.out.println(numbertwo-=y);
+        System.out.print("Please write a numerator: ");
+        int numerator = scan.nextInt();
+        System.out.print("Please write a denominator: ");
+        int denominator = scan.nextInt();
+        try{
+            int trial1 = (numerator/denominator);
+            System.out.println(numerator/denominator);
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.println("Cannot divide by zero!");
+        }
+        //System.out.println(numerator/denominator);
+        scan.close();
+
 
 
 
