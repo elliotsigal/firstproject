@@ -1,54 +1,64 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        final int count = 5;
-        double count1 = 5;
-        count1 = count1 + 5;
-        boolean question = false;
-        double finalnum = ((count+5)*count1);
-        double compoundexpression = ((2+5)%2);
-        System.out.println("Hello and welcome! ");
-        System.out.println(count);
-        System.out.println(count1);
-        System.out.println(question);
-        System.out.println(finalnum);
-        System.out.println(compoundexpression);
-        try{
-            int divide = (5/0);
-        }
-        catch(ArithmeticException e)
-        {
-            System.out.println("Cannot divide by zero!");
-        }
-        int x = 2;
-        x++;
-        int y = 6;
-        y--;
-        System.out.print("Please write a number: ");
-        Scanner scan = new Scanner(System.in);
-        int numberone = scan.nextInt();
-        System.out.println(numberone*=x);
-        System.out.print("Please write a second number: ");
-        int numbertwo = scan.nextInt();
-        System.out.println(numbertwo-=y);
-        System.out.print("Please write a numerator: ");
-        int numerator = scan.nextInt();
-        System.out.print("Please write a denominator: ");
-        int denominator = scan.nextInt();
-        try{
-            int trial1 = (numerator/denominator);
-            System.out.println(numerator/denominator);
-        }
-        catch(ArithmeticException e)
-        {
-            System.out.println("Cannot divide by zero!");
-        }
-        //System.out.println(numerator/denominator);
-        scan.close();
+        System.out.println("Welcome to The Calculator");
+        boolean quit = false;
+        final double pie = 3.14;
+        while (quit == false) {
+            System.out.println("");
+            System.out.print("Please pick an option: 1) Division, 2) Finding the circumfernce 3) Adding by 1, 4) Subtracting by 1, 5) multiplying by pie, 6) quit: ");
+            Scanner scan = new Scanner(System.in);
+            int option = scan.nextInt();
+            if (option == 1) {
+                System.out.print("Please write a numerator: ");
+                int numerator = scan.nextInt();
+                System.out.print("Please write a denominator: ");
+                int denominator = scan.nextInt();
+                try {
+                    int trial1 = (numerator / denominator);
+                    System.out.println(numerator / denominator);
+                } catch (ArithmeticException e) {
+                    System.out.println("Cannot divide by zero!");
+                }
+            }
+            if (option == 2) {
+                System.out.print("Please pick a radius: ");
+                int radius = scan.nextInt();
+                double circumference = ((radius * 2) * pie);
+                System.out.println("The radius is: " + circumference);
+
+            }
+            if (option == 3) {
+                System.out.print("Please pick a number: ");
+                int num = scan.nextInt();
+                num++;
+                System.out.print("The number is now: " + num);
 
 
+            }
+            if (option == 4) {
+                System.out.print("Please pick a number: ");
+                int num = scan.nextInt();
+                num--;
+                System.out.print("The number is now: " + num);
 
+
+            }
+            if (option == 5) {
+                System.out.print("Please pick a number: ");
+                double num = scan.nextInt();
+                num *= pie;
+                System.out.print("The number is now: " + num);
+
+
+            }
+            if (option == 6) {
+                quit = true;
+
+            }
+        }
 
 
     }
 }
+
