@@ -6,6 +6,8 @@ public class Main {
         final double pie = 3.14;
         while (quit == false) {
             System.out.println("");
+            System.out.println("Remember pie is " + pie + "!");
+            System.out.println("");
             System.out.print("Please pick an option: 1) Division, 2) Finding the circumfernce 3) Adding by 1, 4) Subtracting by 1, 5) multiplying by pie, 6) quit: ");
             Scanner scan = new Scanner(System.in);
             int option = scan.nextInt();
