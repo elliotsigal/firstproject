@@ -15,8 +15,6 @@ public class Main {
         scan = new Scanner(System.in);
         System.out.print("What is your email? ");
         String email = scan.nextLine();
-       // System.out.print("What is the current year? ");
-        //double height = scan.nextDouble();
         Player player1 = new Player();
         player1.setName(name);
         player1.setOsis(osis);
@@ -27,7 +25,8 @@ public class Main {
         int currentyear = scan.nextInt();
         Student s = new Student(dob,currentyear);
         if (dob == 0) {
-            System.out.println("Hello " + player1.getName() + " age of " + s.getAverageage() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
+            Student sn = new Student();
+            System.out.println("Hello " + player1.getName() + " age of " + sn.getAverageage() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
         } else {
             System.out.println("Hello " + player1.getName() + " age of " + s.getAge() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
         }
