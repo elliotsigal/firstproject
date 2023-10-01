@@ -15,19 +15,18 @@ public class Main {
         scan = new Scanner(System.in);
         System.out.print("What is your email? ");
         String email = scan.nextLine();
-       // System.out.print("What is the current year? ");
-        //double height = scan.nextDouble();
         Player player1 = new Player();
         player1.setName(name);
         player1.setOsis(osis);
         player1.setEmail(email);
-        System.out.print("What is your yob? If you do not know your yob enter 0  ");
+        System.out.print("What is your year of birth? If you do not know your yob enter 0  ");
         int dob = scan.nextInt();
         System.out.print("What is the current year? ");
         int currentyear = scan.nextInt();
         Student s = new Student(dob,currentyear);
         if (dob == 0) {
-            System.out.println("Hello " + player1.getName() + " age of " + s.getAverageage() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
+            Student sn = new Student();
+            System.out.println("Hello " + player1.getName() + " age of " + sn.getAverageage() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
         } else {
             System.out.println("Hello " + player1.getName() + " age of " + s.getAge() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
         }
@@ -76,6 +75,7 @@ public class Main {
             }
             System.out.println("Now this is the last question(!):What is 3 multiplied by 19");
             int x = 3;
+            scan = new Scanner(System.in);;
             double answer4 = scan.nextDouble();
             if (answer4 == (x*=19)) {
                 System.out.println("Correct!");
@@ -83,6 +83,21 @@ public class Main {
             } else {
                 System.out.println("Wrong!");
                 wrong++;
+            }
+            scan = new Scanner(System.in);
+            System.out.println("What is the word that represents the default value for reference types? ");
+            String answer5 = scan.nextLine();
+            if (answer5 == "Null") {
+                System.out.println("Correct! Null stores reference types and has its own exception");
+                correct++;
+            } else {
+                System.out.println("Wrong! The correct answer was Null, this is an example of a null exception.");
+                wrong++;
+            }
+            try {
+                nullTest();
+            } catch (NullPointerException e) {
+                System.out.println("This is a Null exception when it is caught! ");
             }
             player1.addScore(correct);
             System.out.println("That wasn't so bad! You got " + correct + " correct and " + wrong + " wrong for a score of " + player1.getScore());
@@ -95,5 +110,9 @@ public class Main {
 
         }
 
+    }
+    public static void nullTest() {
+        String nullString = null;
+        nullString.endsWith("test");
     }
 }
