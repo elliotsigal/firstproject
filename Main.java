@@ -1,5 +1,12 @@
 import java.util.Scanner;
 public class Main {
+    static int areaFinder(int x, int y) {
+        return x * y * 1/2;
+    }
+
+    static double areaFinder(double x, double y) {
+        return x * y * 1/2;
+    }
     public static void main(String[] args) {
         int correct = 0;
         int wrong = 0;
@@ -87,7 +94,7 @@ public class Main {
             scan = new Scanner(System.in);
             System.out.println("What is the word that represents the default value for reference types? ");
             String answer5 = scan.nextLine();
-            if (answer5 == "Null") {
+            if (answer5.equals("Null")) {
                 System.out.println("Correct! Null stores reference types and has its own exception");
                 correct++;
             } else {
@@ -99,6 +106,17 @@ public class Main {
             } catch (NullPointerException e) {
                 System.out.println("This is a Null exception when it is caught! ");
             }
+            System.out.println("Bonus! Use the built-in calculator to find the area of a triangle with doubles and integers: Enter your integer length: ");
+            int intlength = scan.nextInt();
+            System.out.println("Integer width: ");
+            int intwidth = scan.nextInt();
+            System.out.println("Use the built-in calculator to find the area of a triangle with doubles and integers. Enter your double length: ");
+            double doublelength = scan.nextDouble();
+            System.out.println("Double width: ");
+            double doublewidth = scan.nextDouble();
+            int intarea = areaFinder(intlength, intwidth);
+            double doublearea = areaFinder(doublelength, doublewidth);
+            System.out.println (" Your double area is " + doublearea + " and your integer area is " + intarea);
             player1.addScore(correct);
             System.out.println("That wasn't so bad! You got " + correct + " correct and " + wrong + " wrong for a score of " + player1.getScore());
 
