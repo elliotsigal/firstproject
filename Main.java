@@ -33,9 +33,9 @@ public class Main {
         Student s = new Student(dob,currentyear);
         if (dob == 0) {
             Student sn = new Student();
-            System.out.println("Hello " + player1.getName() + " age of " + sn.getAverageage() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
+            System.out.println("Your age is " + sn.getAverageage() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
         } else {
-            System.out.println("Hello " + player1.getName() + " age of " + s.getAge() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
+            System.out.println("Your age is " + s.getAge() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
         }
         try {
             Thread.sleep(2000); // 2000ms = 2s
@@ -116,7 +116,7 @@ public class Main {
             double doublewidth = scan.nextDouble();
             int intarea = areaFinder(intlength, intwidth);
             double doublearea = areaFinder(doublelength, doublewidth);
-            System.out.println (" Your double area is " + doublearea + " and your integer area is " + intarea);
+            System.out.println ("Your double area is " + doublearea + " and your integer area is " + intarea);
             player1.addScore(correct);
             System.out.println("That wasn't so bad! You got " + correct + " correct and " + wrong + " wrong for a score of " + player1.getScore());
 
