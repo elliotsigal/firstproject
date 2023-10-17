@@ -12,7 +12,8 @@ public class Main {
         int wrong = 0;
         final double pi = 3.14;
         boolean quit = false;
-        System.out.println("Welcome to the brand new CST");
+        String welcome = "Welcome to my CSA project! By: Elliot Sigal";
+        System.out.println(welcome);
         System.out.print("What is your name? ");
         Scanner scan = new Scanner(System.in);
         String name = scan.nextLine();
@@ -26,7 +27,7 @@ public class Main {
         player1.setName(name);
         player1.setOsis(osis);
         player1.setEmail(email);
-        System.out.print("What is your year of birth? If you do not know your yob enter 0  ");
+        System.out.print("What is your year of birth? \nIf you do not know your year of birth enter 0  ");
         int dob = scan.nextInt();
         System.out.print("What is the current year? ");
         int currentyear = scan.nextInt();
@@ -43,7 +44,9 @@ public class Main {
 
         }
         System.out.println("Now let's start!");
-        System.out.print("Pick a difficulty: 1) Hard 1) Hard 1) Hard(Always test your limits!): ");
+        String difficulties = " 1) Hard 1) Hard 1) Hard 2) quit ";
+        String pickdiff = "Pick a difficulty: ";
+        System.out.print(pickdiff.concat(difficulties));
         int option = scan.nextInt();
         if (option == 1) {
             System.out.println("Wow, let's see how smart you really are!");
@@ -118,7 +121,9 @@ public class Main {
             double doublearea = areaFinder(doublelength, doublewidth);
             System.out.println ("Your double area is " + doublearea + " and your integer area is " + intarea);
             player1.addScore(correct);
-            System.out.println("That wasn't so bad! You got " + correct + " correct and " + wrong + " wrong for a score of " + player1.getScore());
+            Grades g = new Grades(correct,wrong);
+            System.out.println(g.toString() + player1.getScore());
+
 
 
 
