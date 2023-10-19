@@ -27,6 +27,9 @@ public class Main {
         player1.setName(name);
         player1.setOsis(osis);
         player1.setEmail(email);
+        if (quit == true) {
+            System.exit(0);
+        }
         System.out.print("What is your year of birth? \nIf you do not know your year of birth enter 0  ");
         int dob = scan.nextInt();
         System.out.print("What is the current year? ");
@@ -39,7 +42,7 @@ public class Main {
             System.out.println("Your age is " + s.getAge() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
         }
         try {
-            Thread.sleep(2000); // 2000ms = 2s
+            Thread.sleep(1250);
         } catch (InterruptedException ex) {
 
         }
@@ -131,6 +134,8 @@ public class Main {
 
 
 
+        } else {
+           quit = true;
         }
 
     }
