@@ -1,4 +1,9 @@
+import java.io.FileReader;
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.File;
 public class Main {
     static int areaFinder(int x, int y) {
         return x * y * 1/2;
@@ -8,6 +13,9 @@ public class Main {
         return x * y * 1/2;
     }
     public static void main(String[] args) {
+        //Assessment a = new Assessment("What is your name?", "Mr. Holmer");
+        //a.administer();
+
         int correct = 0;
         int wrong = 0;
         final double pi = 3.14;
@@ -123,9 +131,52 @@ public class Main {
             int intarea = areaFinder(intlength, intwidth);
             double doublearea = areaFinder(doublelength, doublewidth);
             System.out.println ("Your double area is " + doublearea + " and your integer area is " + intarea);
+            System.out.println(" ");
+            try {
+                File newfile = new File("customquestion");
+                Scanner myReader = new Scanner(newfile);
+                while (myReader.hasNextLine()) {
+                    String question = myReader.nextLine();
+                    System.out.println("Another bonus! " + question);
+                }
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
             player1.addScore(correct);
             Grades g = new Grades(correct,wrong);
             System.out.println(g.toString() + player1.getScore());
+            System.out.println("Now do you want to add one of your own questions? 1) Yes 2) No! Get me out of here 3) Maybe next time");
+            int backoutoption = scan.nextInt();
+            if (backoutoption != 1) {
+                quit = true;
+
+            } else {
+                scan = new Scanner(System.in);
+                System.out.println("Enter your question: ");
+                String customquestion = scan.nextLine();
+                System.out.println("Enter the correct answer: ");
+                String customanswer = scan.nextLine();
+                try {
+                    FileWriter file = new FileWriter("customquestion");
+                    file.write(customquestion);
+                    file.close();
+                }
+                catch (IOException e) {
+                    System.out.println(
+                            "There are some IOException");
+                }
+                try {
+                    FileWriter file = new FileWriter("customanswer");
+                    file.write(customanswer);
+                    file.close();
+                }
+                catch (IOException e) {
+                    System.out.println(
+                            "There are some IOException");
+                }
+            }
 
 
 
