@@ -35,7 +35,7 @@ public class Main {
         player1.setName(name);
         player1.setOsis(osis);
         player1.setEmail(email);
-        if (quit == true) {
+        if (quit) {
             System.exit(0);
         }
         System.out.print("What is your year of birth? \nIf you do not know your year of birth enter 0  ");
@@ -144,6 +144,24 @@ public class Main {
                 System.out.println("An error occurred.");
                 e.printStackTrace();
             }
+            int useranswer = scan.nextInt();
+
+            try {
+                File newanswerfile = new File("customanswer");
+                Scanner myReader1 = new Scanner(newanswerfile);
+                while (myReader1.hasNextLine()) {
+                    int answer = myReader1.nextInt();
+                    if (useranswer == answer) {
+                        System.out.println("You are correct");
+                    } else {
+                        System.out.println("You are wrong");
+                    }
+                }
+                myReader1.close();
+            } catch (FileNotFoundException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
             player1.addScore(correct);
             Grades g = new Grades(correct,wrong);
             System.out.println(g.toString() + player1.getScore());
@@ -185,8 +203,10 @@ public class Main {
 
 
 
-        } else {
+        } else if (option == 2){
            quit = true;
+        } else {
+            System.out.print("This is not one of the choices, don't try to get out of this test! Retry.");
         }
 
     }
