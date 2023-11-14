@@ -1,9 +1,9 @@
-import java.io.FileReader;
+
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;
-import java.io.File;
 public class Main {
     static int areaFinder(int x, int y) {
         return x * y * 1/2;
@@ -108,7 +108,7 @@ public class Main {
             scan = new Scanner(System.in);
             System.out.println("What is the word that represents the default value for reference types? ");
             String answer5 = scan.nextLine();
-            if (answer5.equals("Null")) {
+            if (answer5.equals("Null") || answer5.equals("null")) {
                 System.out.println("Correct! Null stores reference types and has its own exception");
                 correct++;
             } else {
@@ -149,7 +149,7 @@ public class Main {
             try {
                 File newanswerfile = new File("customanswer");
                 Scanner myReader1 = new Scanner(newanswerfile);
-                while (myReader1.hasNextLine()) {
+                if (myReader1.hasNextLine()) {
                     int answer = myReader1.nextInt();
                     if (useranswer == answer) {
                         System.out.println("You are correct");
@@ -203,8 +203,8 @@ public class Main {
 
 
 
-        } else if (option == 2){
-           quit = true;
+        } else if (option != 1){
+            quit = true;
         } else {
             System.out.print("This is not one of the choices, don't try to get out of this test! Retry.");
         }

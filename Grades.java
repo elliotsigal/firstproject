@@ -9,3 +9,4 @@ public class Grades {
         return "That wasn't so bad! You got " + this.correct + " correct and " + this.wrong + " wrong for a score of ";
     }
 }
+
