@@ -2,7 +2,7 @@
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.File;  // Import the File class
+import java.io.File;
 import java.io.FileNotFoundException;
 public class Main {
     static int areaFinder(int x, int y) {
@@ -12,7 +12,7 @@ public class Main {
     static double areaFinder(double x, double y) {
         return x * y * 1/2;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //Assessment a = new Assessment("What is your name?", "Mr. Holmer");
         //a.administer();
 
@@ -50,7 +50,7 @@ public class Main {
             System.out.println("Your age is " + s.getAge() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
         }
         try {
-            Thread.sleep(1250);
+            Thread.sleep(1050);
         } catch (InterruptedException ex) {
 
         }
@@ -144,13 +144,13 @@ public class Main {
                 System.out.println("An error occurred.");
                 e.printStackTrace();
             }
-            int useranswer = scan.nextInt();
+            double useranswer = scan.nextDouble();
 
             try {
                 File newanswerfile = new File("customanswer");
                 Scanner myReader1 = new Scanner(newanswerfile);
                 if (myReader1.hasNextLine()) {
-                    int answer = myReader1.nextInt();
+                    double answer = myReader1.nextDouble();
                     if (useranswer == answer) {
                         System.out.println("You are correct");
                     } else {
