@@ -63,13 +63,58 @@ public class Main {
             System.out.println("Wow, let's see how smart you really are!");
             System.out.println("What is the power of 2 that will get you " + (Integer.MAX_VALUE+1) + " when added by 1");
             int answer1 = scan.nextInt();
-            if (answer1 !=31) {
-                wrong++;
+            System.out.println("Answer inputted... would you like to ask a friend before revealing the answer? If yes type 1, if no types 2");
+            int friend = scan.nextInt();
+            if (friend == 1) {
+                scan = new Scanner(System.in);
+                Player player2 = new Player();
+                System.out.println("What is your name? ");
+                String name2 = scan.nextLine();
+                System.out.println("What is your osis? ");
+                int osis2 = scan.nextInt();
+                scan = new Scanner(System.in);
+                System.out.println("What is your email? ");
+                String email2 = scan.nextLine();
+                player2.setName(name2);
+                player2.setOsis(osis2);
+                player2.setEmail(email2);
+                System.out.println("The information you gave is an osis of " + player2.getOsis() + " and and email of " + player2.getEmail());
+                if (player1.equals(player2)){
+                    System.out.print("You are the same person! I said find a friend, your answer was ..");
+                    if (answer1 == 31) {
+                        System.out.println("Your answer was Correct");
+                        correct++;
+
+                    } else {
+                        System.out.println("Your answer was Wrong");
+                        wrong++;
+
+                    }
+                } else {
+                    System.out.print("Good you found a friend, what is their answer?");
+                    int answernew = scan.nextInt();
+                    if (answer1 == 31 || answernew == 31) {
+                        System.out.println("Correct");
+                        correct++;
+
+                    } else {
+                        System.out.println("Wrong");
+                        wrong++;
+
+                    }
+
+                }
 
             } else {
-                System.out.println("Correct");
-                correct++;
+                if (answer1 == 31) {
+                    System.out.println("Your answer was correct");
+                    correct++;
 
+                } else {
+                    System.out.println("Your answer was Wrong");
+                    wrong++;
+
+                }
             }
             System.out.println("Next question: What number does the denominator have to be for a Arthimetic exception to occur?");
             int answer2 = scan.nextInt();
@@ -96,7 +141,7 @@ public class Main {
             }
             System.out.println("Now this is the last question(!):What is 3 multiplied by 19");
             int x = 3;
-            scan = new Scanner(System.in);;
+            scan = new Scanner(System.in);
             double answer4 = scan.nextDouble();
             if (answer4 == (x*=19)) {
                 System.out.println("Correct!");
