@@ -28,6 +28,7 @@ public class Player {
     {
         return score;
     }
+    public boolean equals (Player player2) {return player2.getOsis()==(this.getOsis());}
 
 
 
