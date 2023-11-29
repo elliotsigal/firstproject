@@ -49,11 +49,15 @@ public class Main {
         } else {
             System.out.println("Your age is " + s.getAge() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
         }
+        for (int i = 0; i < 10; i++) {
+            System.out.println(" ");
+        }
         try {
             Thread.sleep(1050);
         } catch (InterruptedException ex) {
 
         }
+        System.out.println("Clearing successful...");
         System.out.println("Now let's start!");
         String difficulties = " 1) Hard 1) Hard 1) Hard 2) quit ";
         String pickdiff = "Pick a difficulty: ";
