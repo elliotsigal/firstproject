@@ -12,14 +12,16 @@ public class Main {
     static double areaFinder(double x, double y) {
         return x * y * 1/2;
     }
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         //Assessment a = new Assessment("What is your name?", "Mr. Holmer");
         //a.administer();
-
         int correct = 0;
         int wrong = 0;
         final double pi = 3.14;
         boolean quit = false;
+        if (quit) {
+            System.exit(0);
+        }
         String welcome = "Welcome to my CSA project! By: Elliot Sigal";
         System.out.println(welcome);
         System.out.print("What is your name? ");
@@ -35,9 +37,6 @@ public class Main {
         player1.setName(name);
         player1.setOsis(osis);
         player1.setEmail(email);
-        if (quit) {
-            System.exit(0);
-        }
         System.out.print("What is your year of birth? \nIf you do not know your year of birth enter 0  ");
         int dob = scan.nextInt();
         System.out.print("What is the current year? ");
@@ -49,7 +48,18 @@ public class Main {
         } else {
             System.out.println("Your age is " + s.getAge() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
         }
+
         for (int i = 0; i < 10; i++) {
+            for( int j = 0; j < 3; j++){
+                System.out.println("Proccessing...");
+
+            }
+            try {
+                Thread.sleep(750);
+            } catch (InterruptedException ex) {
+
+            }
+            System.out.println("Check " + i + " Done");
             System.out.println(" ");
         }
         try {
