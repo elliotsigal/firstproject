@@ -1,0 +1,16 @@
+public class Student {
+    private int osis;
+    private String name;
+    private String email;
+
+    public String getName(){
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public Student(int osis, String name, int GPA){
+        
+    }
+
+
