@@ -1,3 +1,11 @@
+/** A class that prints everything and calls other files and classes
+ * An AP CSP quiz, that is graded
+ * @author Elliot Sigal
+ * @version 1.0
+ * @pre schoolname must be a string, difficulty must be 1 or 2, all answers must be ints except for question 5
+ * @post grade>0
+ * @return the grade of the quiz
+ */
 
 import java.util.Scanner;
 import java.io.FileWriter;
@@ -13,8 +21,6 @@ public class Main {
         return x * y * 1/2;
     }
     public static void main(String[] args){
-        //Assessment a = new Assessment("What is your name?", "Mr. Holmer");
-        //a.administer();
         int correct = 0;
         int wrong = 0;
         final double pi = 3.14;
@@ -41,12 +47,20 @@ public class Main {
         int dob = scan.nextInt();
         System.out.print("What is the current year? ");
         int currentyear = scan.nextInt();
-        Student s = new Student(dob,currentyear);
+        scan = new Scanner(System.in);
+        System.out.print("What is your schools name? ");
+        String schoolname = scan.nextLine();
+        System.out.print("What is your gradyear? ");
+        int gradyear = scan.nextInt();
+        ID id = new ID(schoolname, gradyear);
+        Student s = new Student(dob,currentyear,id);
         if (dob == 0) {
-            Student sn = new Student();
+            Student sn = new Student(id);
             System.out.println("Your age is " + sn.getAverageage() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
+            System.out.println(sn.getID());
         } else {
             System.out.println("Your age is " + s.getAge() + " the information you gave is an osis of " + player1.getOsis() + " and and email of " + player1.getEmail());
+            System.out.println(s.getID());
         }
 
         for (int i = 0; i < 10; i++) {
